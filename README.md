@@ -26,3 +26,19 @@ Before running the tests make sure you are serving the app via `ng serve`.
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Explicación de la estructura
+
+El proyecto está organizado en 3 módulos primordiales {Api, Clients, Components}, 
+
+Api: contiene el servicio general para realizar la conexión por API Rest (Http y de más). 
+Clients: Contiene la aplicación en sí, adentro posee un módulo de routing, 4 páginas, 1 servicio ClientAPIRest y un par de components personalizados para el módulo.
+Components: Módulo que contiene un conjunto de componentes que son usados en todo el proyecto, como, tables, banners, forms, entre otras. Cabe destacar que éste módulo es totalmente general y parametrizable mendiante @Input.
+
+Extras:
+1. En el AppModule sólo se encuentra una página (404 not found) y es la única ruta a la cual hace referencia el módulo de routing principal.
+2. Incluye JQuery Mask para dar un formato correcto a los números de teléfono.
+3. También se encuentra la versión de producción ya compilada en anexo (dist).
+4. Para el maquetado se usaron estilos simples y bootstrap en su versión 4.
+
+Tiempo de desarrollo: 5h, se desarrolló todo desde 0, módulos, servicios y todo en general.

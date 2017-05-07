@@ -1,0 +1,15 @@
+<section id="banner">
+	<hr />
+	<div class="jumbotron">
+		<div *ngIf="data" [attr.style]="data.style">
+			<h2>{{data.title}}</h2>
+			<p class="lead">{{data.main_text}}</p>
+			<hr class="my-4" *ngIf="data.separator">
+			<p>{{data.secondary_text}}</p>
+			<p class="lead" *ngIf="data.button">
+				<a class="btn" [ngClass]="data.button.classes" [attr.routerLink]="data.button.url" role="button">{{data.button.slug}}</a>
+			</p>
+		</div>
+	</div>
+	<hr />
+</section>

@@ -1,0 +1,12 @@
+section#header{
+	background-color: rgb(40,40,40);
+	color: white;
+	height: 80px;
+	div{
+		height: 100%;
+
+		h2{
+			transform: translateY(25%);
+		}
+	}
+}

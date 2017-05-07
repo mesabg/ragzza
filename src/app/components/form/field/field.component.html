@@ -1,0 +1,33 @@
+<div class="custom-input-group"
+	[formGroup]="form">
+	<label
+		[attr.for]="field.key"
+		[style.color]="labelColor"
+		*ngIf="control.pristine">
+		{{field.label}}
+	</label>
+	<label class="custom-error"
+		[attr.for]="field.key"
+		*ngIf="control.hasError('required') && !control.pristine">
+		{{field.label}} is required
+	</label>
+	<label class="custom-error"
+		[attr.for]="field.key"
+		*ngIf="control.hasError('minlength')">
+		{{field.label}} is too short
+	</label>
+	<label class="custom-error"
+		[attr.for]="field.key"
+		*ngIf="control.hasError('maxlength')">
+		{{field.label}} is too long
+	</label>
+	<label class="custom-valid"
+		[attr.for]="field.key"
+		*ngIf="control.valid && !control.pristine">
+		{{field.label}}
+	</label>
+	<input
+	[formControlName]="field.key"
+	[id]="field.key"
+	[type]="field.type">
+</div>

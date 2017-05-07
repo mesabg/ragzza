@@ -1,0 +1,10 @@
+<section id="update_client-page">
+	<banner [data]="banner"></banner>
+	<br>
+	<custom-form>Update Client</custom-form>
+	<br>
+	<div *ngIf="client">
+		<p><strong>Created at:</strong> {{client.created}} </p>
+		<p><strong>Last updated at:</strong> {{client.updated}} </p>
+	</div>
+</section>

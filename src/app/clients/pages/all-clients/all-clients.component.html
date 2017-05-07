@@ -1,0 +1,15 @@
+<section id="all-clients-page">
+	<banner [data]="banner"></banner>
+	<br>
+	<!--Start filter-->
+	<form class="form-inline row" novalidate [formGroup]="filter" (ngSubmit)="applyFilter()">
+		<label class="sr-only" for="country">Country</label>
+		<input type="text" class="form-control col-5" id="country" formControlName="country" placeholder="Country">
+		<label class="sr-only" for="city">City</label>
+		<input type="text" class="form-control col-5" id="city" formControlName="city" placeholder="City">
+		<button type="submit" class="btn btn-inverse col-2">Apply filter</button>
+	</form>
+	<!--Ends filter-->
+	<br>
+	<clients-table [clients]="clients"></clients-table>
+</section>

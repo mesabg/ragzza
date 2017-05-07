@@ -1,0 +1,22 @@
+<section class="custom-table" *ngIf="data">
+	<table class="table table-inverse">
+		<thead>
+			<tr>
+				<ng-template ngFor let-th [ngForOf]="data.titles">
+				<th style="text-align: center;">{{th.title}}</th>
+				</ng-template>
+			</tr>
+		</thead>
+		<tbody>
+			<ng-template ngFor let-row [ngForOf]="data.rows | orderBy:'name'" let-index="index">
+			<tr>
+				<ng-template ngFor let-th [ngForOf]="data.titles" let-i="index">
+				<div *ngIf="i==0; then thenBlock else elseBlock"></div> 
+				<ng-template #thenBlock> <th [innerHTML]="index"></th> </ng-template>
+				<ng-template #elseBlock> <td [innerHTML]="row[th.slug]"></td> </ng-template>
+				</ng-template>
+			</tr>
+			</ng-template>
+		</tbody>
+	</table>
+</section>
